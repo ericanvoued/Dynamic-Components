@@ -13,4 +13,7 @@ export class ChildComponent implements OnInit {
   ngOnInit() {
   }
 
+  childClick(){
+    console.log('child')
+  }
 }

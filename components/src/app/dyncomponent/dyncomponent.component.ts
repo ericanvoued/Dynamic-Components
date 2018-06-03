@@ -27,6 +27,13 @@ export class DyncomponentComponent implements OnInit {
 
   changeTitle(){
     this.comp1.instance.title = 'test'
+    setTimeout(()=>{
+      this.comp1.destroy();
+    },1000)
+    setTimeout(()=>{
+      const childComp = this.resolver.resolveComponentFactory(ChildComponent)
+      this.comp1 = this.dyncomponent.createComponent(childComp);
+    },2000)
   }
 
 
